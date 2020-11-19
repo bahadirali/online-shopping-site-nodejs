@@ -1,3 +1,4 @@
+var path = require('path');
 var express = require('express');
 var app = express();
 var mysql = require('mysql');
@@ -8,7 +9,7 @@ var conn = mysql.createConnection({
     user : process.env.DB_USER,
     password : process.env.DB_PASS,
     database : process.env.DB_NAME
-});
+}); 
 
 conn.connect();
 
@@ -17,6 +18,10 @@ app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });
+
+var dir = path.join(__dirname, 'public');
+
+app.use(express.static(dir));
 
 app.get('/searchProducts', function (request, response) {
     let keyword = request.query.keyword;
