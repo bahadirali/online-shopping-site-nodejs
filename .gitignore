@@ -1,2 +1,4 @@
 node_modules/
+temp/
 .env
+firebase-credentials.json
