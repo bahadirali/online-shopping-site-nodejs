@@ -17,6 +17,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node -r dotenv/config server.js"
   },
+  "engines": {
+    "node": "12.x"
+  },
   "author": "",
   "license": "ISC"
 }
