@@ -1,0 +1,1 @@
+Simple demo to show how to use auth0 for login and firebase for simple db operations.
